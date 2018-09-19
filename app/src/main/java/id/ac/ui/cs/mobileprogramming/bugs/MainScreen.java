@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.bugs;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,10 +13,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import id.ac.ui.cs.mobileprogramming.bugs.core.NetworkData;
 import id.ac.ui.cs.mobileprogramming.bugs.fragment.AboutFragment;
 import id.ac.ui.cs.mobileprogramming.bugs.fragment.LocationFragment;
 import id.ac.ui.cs.mobileprogramming.bugs.fragment.MonitorFragment;
@@ -123,6 +127,23 @@ public class MainScreen extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MonitorFragment.PHONE_PERMISSION: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    String phoneNumber = NetworkData.getPhoneNumber(getApplicationContext());
+                    ((TextView) findViewById(R.id.phone_phone_number)).setText(phoneNumber);
+                } else {
+                    Toast.makeText(getApplicationContext(), "You need to grant permission to continue", Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+            default:
+                Toast.makeText(getApplicationContext(), "You need to grant permission to continue", Toast.LENGTH_SHORT).show();
+        }
     }
 
 

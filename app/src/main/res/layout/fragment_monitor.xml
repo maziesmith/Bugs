@@ -5,6 +5,14 @@
     android:padding="@dimen/base_padding"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/base_padding"
+        android:text="@string/monitor_phone"
+        android:textStyle="bold"
+        android:textAllCaps="true"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,6 +31,53 @@
             android:gravity="right"
             android:text="@string/retrieve_data"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/base_padding"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/monitor_phone_provider_name"/>
+
+        <TextView
+            android:id="@+id/phone_provider_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="@string/retrieve_data"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/base_padding"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/monitor_phone_phone_number"/>
+
+        <TextView
+            android:id="@+id/phone_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="@string/permission_denied"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/xs_padding"
+        android:paddingBottom="@dimen/base_padding"
+        android:text="@string/monitor_wifi"
+        android:textStyle="bold"
+        android:textAllCaps="true"/>
 
     <LinearLayout
         android:layout_width="match_parent"
