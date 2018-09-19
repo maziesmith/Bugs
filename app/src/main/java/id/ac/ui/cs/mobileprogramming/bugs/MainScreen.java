@@ -79,11 +79,19 @@ public class MainScreen extends AppCompatActivity {
         }
     }
 
+    private void setHeader(int resId) {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(resId);
+        }
+    }
+
     private void setMonitorScreen() {
         clearFragments();
         monitor = new MonitorFragment();
         fragments.add(monitor);
         fragmentManager.beginTransaction().add(R.id.fragment_container, monitor).commit();
+        setHeader(R.string.nav_menu_monitor);
     }
 
     private void setLocationScreen() {
@@ -91,6 +99,7 @@ public class MainScreen extends AppCompatActivity {
         location = new LocationFragment();
         fragments.add(location);
         fragmentManager.beginTransaction().add(R.id.fragment_container, location).commit();
+        setHeader(R.string.nav_menu_location);
     }
 
     private void setAboutScreen() {
@@ -98,6 +107,7 @@ public class MainScreen extends AppCompatActivity {
         about = new AboutFragment();
         fragments.add(about);
         fragmentManager.beginTransaction().add(R.id.fragment_container, about).commit();
+        setHeader(R.string.nav_menu_about);
     }
 
     @Override
