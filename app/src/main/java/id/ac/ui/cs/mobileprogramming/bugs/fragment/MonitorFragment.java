@@ -1,18 +1,20 @@
 package id.ac.ui.cs.mobileprogramming.bugs.fragment;
 
 import android.Manifest;
-import android.content.pm.PackageManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import id.ac.ui.cs.mobileprogramming.bugs.R;
 import id.ac.ui.cs.mobileprogramming.bugs.core.NetworkData;
@@ -21,11 +23,29 @@ public class MonitorFragment extends Fragment {
     public static final int PHONE_PERMISSION = 0;
     private View root;
 
+    public class BatteryLevelReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+//            int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+//            float batteryPct = level / (float) scale;
+
+            TextView data = root.findViewById(R.id.phone_battery_level);
+//            Toast.makeText(context, "Level : " + level + "\nScale : " + scale + "\nPercentage : " + batteryPct, Toast.LENGTH_SHORT).show();
+            data.setText(level + "%");
+        }
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         root = inflater.inflate(R.layout.fragment_monitor, container, false);
+
+        IntentFilter intentFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        BatteryLevelReceiver receiver = new BatteryLevelReceiver();
+        getContext().registerReceiver(receiver, intentFilter);
+
         fetchData(root);
         return root;
     }

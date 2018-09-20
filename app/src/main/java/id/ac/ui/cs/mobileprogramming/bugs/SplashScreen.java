@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
+    private final boolean DEBUG_MODE = false;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,7 +31,11 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void finishLoading() {
-        startActivity(new Intent(this, MainScreen.class));
+        if (DEBUG_MODE) {
+            startActivity(new Intent(this, TestScreen.class));
+        } else {
+            startActivity(new Intent(this, MainScreen.class));
+        }
         finish();
     }
 

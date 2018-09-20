@@ -16,7 +16,10 @@
     <string name="nav_menu_about">About</string>
 
     <string name="monitor_phone">Phone</string>
+    <string name="monitor_network">Network</string>
     <string name="monitor_wifi">Wifi</string>
+    <string name="monitor_phone_battery_level">Battery Level :</string>
+    <string name="monitor_phone_battery_data" formatted="true">%d$1&#37;</string>
     <string name="monitor_phone_provider_name">Provider Name :</string>
     <string name="monitor_phone_phone_number">Phone Number :</string>
     <string name="monitor_network_mac_address">MAC Address :</string>
