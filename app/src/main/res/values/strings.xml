@@ -3,7 +3,8 @@
 
     <string name="retrieve_data">Retrieving data&#8230;</string>
     <string name="permission_denied">Permission denied</string>
-    <string name="not_found">Do you see bug in here?</string>
+    <string name="not_ready">Do you see bug in here?</string>
+    <string name="not_found">Whoa, where did it go?</string>
 
     <string name="splash_subtitle">Be aware of this app</string>
 

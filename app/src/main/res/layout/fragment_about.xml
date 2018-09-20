@@ -15,7 +15,6 @@
             android:layout_height="@dimen/nothing_size"
             android:rotation="135"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/bug_logo"
             android:backgroundTint="@color/colorAccent"/>
 
         <TextView
