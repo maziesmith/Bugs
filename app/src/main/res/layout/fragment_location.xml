@@ -10,10 +10,20 @@
         android:layout_centerVertical="true"
         android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="@dimen/nothing_size"
+            android:layout_height="@dimen/nothing_size"
+            android:rotation="135"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/bug_logo"
+            android:backgroundTint="@color/colorAccent"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LOCATION FRAGMENT"/>
+            android:layout_marginTop="@dimen/base_padding"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/not_found"/>
     </LinearLayout>
 
 </RelativeLayout>

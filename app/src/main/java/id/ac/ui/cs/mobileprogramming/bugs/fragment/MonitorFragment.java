@@ -27,11 +27,7 @@ public class MonitorFragment extends Fragment {
         @Override
         public void onReceive(Context context, Intent intent) {
             int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
-//            int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-//            float batteryPct = level / (float) scale;
-
             TextView data = root.findViewById(R.id.phone_battery_level);
-//            Toast.makeText(context, "Level : " + level + "\nScale : " + scale + "\nPercentage : " + batteryPct, Toast.LENGTH_SHORT).show();
             data.setText(level + "%");
         }
     }

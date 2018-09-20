@@ -8,4 +8,6 @@
 
     <dimen name="nav_header_height">260dp</dimen>
     <dimen name="base_pic_size">60dp</dimen>
+
+    <dimen name="nothing_size">200dp</dimen>
 </resources>
