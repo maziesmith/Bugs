@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/themeRed</color>
+    <color name="colorPrimaryDark">@color/themeRedDark</color>
+    <color name="colorAccent">@color/themeRedLight</color>
+
+    <color name="themeRed">#dd2c00</color>
+    <color name="themeRedDark">#a30000</color>
+    <color name="themeRedLight">#ff6434</color>
+</resources>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Bug</string>
+
+    <string name="retrieve_data">Retrieving data&#8230;</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="not_found">Do you see bug in here?</string>
+
+    <string name="splash_subtitle">Be aware of this app</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Aji Imawan Omi</string>
+    <string name="nav_header_subtitle">Developer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_menu_monitor">Monitor</string>
+    <string name="nav_menu_location">Location</string>
+    <string name="nav_menu_about">About</string>
+
+    <string name="monitor_phone">Phone</string>
+    <string name="monitor_network">Network</string>
+    <string name="monitor_wifi">Wifi</string>
+    <string name="monitor_phone_battery_level">Battery Level :</string>
+    <string name="monitor_phone_battery_data" formatted="true">%d$1&#37;</string>
+    <string name="monitor_phone_provider_name">Provider Name :</string>
+    <string name="monitor_phone_phone_number">Phone Number :</string>
+    <string name="monitor_network_mac_address">MAC Address :</string>
+    <string name="monitor_network_id">Network ID :</string>
+    <string name="monitor_network_ssid">Network SSID :</string>
+    <string name="monitor_network_bssid">Network BSSID :</string>
+    <string name="monitor_network_ip_address">IP Address :</string>
+    <string name="monitor_network_link_speed">Network Link Speed :</string>
+    <string name="monitor_network_frequency">Network Frequency :</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

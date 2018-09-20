@@ -1,0 +1,13 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="base_padding">16dp</dimen>
+    <dimen name="xs_padding">8dp</dimen>
+
+    <dimen name="splash_logo">140dp</dimen>
+    <dimen name="splash_title">55sp</dimen>
+
+    <dimen name="nav_header_height">260dp</dimen>
+    <dimen name="base_pic_size">60dp</dimen>
+
+    <dimen name="nothing_size">200dp</dimen>
+</resources>
