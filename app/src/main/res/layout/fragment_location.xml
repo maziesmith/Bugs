@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/base_padding"
             android:layout_gravity="center_horizontal"
-            android:text="@string/not_found"/>
+            android:text="@string/not_ready"/>
     </LinearLayout>
 
 </RelativeLayout>
