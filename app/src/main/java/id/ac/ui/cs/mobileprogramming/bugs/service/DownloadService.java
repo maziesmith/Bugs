@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.ResultReceiver;
 import android.support.annotation.NonNull;
 import android.support.v4.app.JobIntentService;
-import android.util.Log;
 
 public class DownloadService extends JobIntentService {
     public static final int JOB_ID = 3001;
@@ -30,7 +29,7 @@ public class DownloadService extends JobIntentService {
 
     @Override
     protected void onHandleWork(@NonNull Intent intent) {
-        Log.d(TAG, "handle intent [" + intent + "]");
+//        Log.d(TAG, "handle intent [" + intent + "]");
         if (intent.getAction() != null) {
             switch (intent.getAction()) {
                 case ACTION_DOWNLOAD:
