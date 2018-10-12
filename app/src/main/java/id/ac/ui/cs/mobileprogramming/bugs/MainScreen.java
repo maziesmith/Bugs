@@ -2,7 +2,6 @@ package id.ac.ui.cs.mobileprogramming.bugs;
 
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -26,7 +25,6 @@ import id.ac.ui.cs.mobileprogramming.bugs.core.NetworkData;
 import id.ac.ui.cs.mobileprogramming.bugs.fragment.AboutFragment;
 import id.ac.ui.cs.mobileprogramming.bugs.fragment.LocationFragment;
 import id.ac.ui.cs.mobileprogramming.bugs.fragment.MonitorFragment;
-import id.ac.ui.cs.mobileprogramming.bugs.service.DownloadService;
 import id.ac.ui.cs.mobileprogramming.bugs.service.WorkerResultReceiver;
 
 public class MainScreen extends AppCompatActivity {

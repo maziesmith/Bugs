@@ -3,7 +3,6 @@ package id.ac.ui.cs.mobileprogramming.bugs.service;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
-import android.util.Log;
 
 public class WorkerResultReceiver extends ResultReceiver {
     public static final String TAG = "ResultReceiver";
@@ -25,7 +24,7 @@ public class WorkerResultReceiver extends ResultReceiver {
     protected void onReceiveResult(int resultCode, Bundle resultData) {
         super.onReceiveResult(resultCode, resultData);
         if (receiver != null) {
-            Log.d(TAG, "worker receive with result code [" + resultCode + "]");
+//            Log.d(TAG, "worker receive with result code [" + resultCode + "]");
             receiver.onReceiveResult(resultCode, resultData);
         }
     }
