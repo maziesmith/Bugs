@@ -2,6 +2,7 @@ package id.ac.ui.cs.mobileprogramming.bugs;
 
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -19,27 +20,49 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import id.ac.ui.cs.mobileprogramming.bugs.core.NetworkData;
 import id.ac.ui.cs.mobileprogramming.bugs.fragment.AboutFragment;
 import id.ac.ui.cs.mobileprogramming.bugs.fragment.LocationFragment;
 import id.ac.ui.cs.mobileprogramming.bugs.fragment.MonitorFragment;
+import id.ac.ui.cs.mobileprogramming.bugs.service.DownloadService;
+import id.ac.ui.cs.mobileprogramming.bugs.service.WorkerResultReceiver;
 
 public class MainScreen extends AppCompatActivity {
 
-    private DrawerLayout drawer;
+    @BindView(R2.id.drawer_layout) DrawerLayout drawer;
+    @BindView(R2.id.nav_view) NavigationView nav;
+    @BindView(R2.id.toolbar) Toolbar toolbar;
+
     private FragmentManager fragmentManager;
     List<Fragment> fragments;
     MonitorFragment monitor;
     LocationFragment location;
     AboutFragment about;
 
+    private WorkerResultReceiver resultReceiver;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        drawer = findViewById(R.id.drawer_layout);
-        NavigationView nav = findViewById(R.id.nav_view);
+        fragmentManager = getSupportFragmentManager();
+        fragments = new ArrayList<>();
+
+//        resultReceiver = new WorkerResultReceiver(new Handler());
+//        resultReceiver.setReceiver(this);
+
+
+        ButterKnife.bind(this);
+
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_action_hamburger);
+        }
 
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -63,16 +86,6 @@ public class MainScreen extends AppCompatActivity {
             }
         });
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_action_hamburger);
-        }
-
-        fragmentManager = getSupportFragmentManager();
-        fragments = new ArrayList<>();
         setMonitorScreen();
     }
 
@@ -146,5 +159,14 @@ public class MainScreen extends AppCompatActivity {
         }
     }
 
-
+//    @Override
+//    public void onReceiveResult(int resultCode, Bundle resultData) {
+//        switch (resultCode) {
+//            case DownloadService.DOWNLOAD_RESULT_CODE:
+//                if (resultData != null) {
+//                    Toast.makeText(getApplicationContext(), "YES", Toast.LENGTH_SHORT).show();
+//                }
+//                break;
+//        }
+//    }
 }

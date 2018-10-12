@@ -32,5 +32,12 @@
     <string name="monitor_network_link_speed">Network Link Speed :</string>
     <string name="monitor_network_frequency">Network Frequency :</string>
 
+    <string name="click_me">Can you click the bug?</string>
+    <string name="ok">Got it!</string>
+    <string name="glitches">GLITCHES!</string>
+    <string name="dont_click">DON\'T CLICK!</string>
+    <string name="who_said_click">WHO SAID YOU CAN CLICK THAT BUTTON?!</string>
+    <string name="what_happened">What do you think what will happened?</string>
+
     <string name="action_settings">Settings</string>
 </resources>

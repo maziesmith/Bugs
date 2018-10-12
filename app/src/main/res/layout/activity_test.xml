@@ -9,5 +9,11 @@
         android:id="@+id/test_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TEST PAGE"/>
+        android:text="@string/retrieve_data"/>
+
+    <Button
+        android:id="@+id/test_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/retrieve_data"/>
 </LinearLayout>
