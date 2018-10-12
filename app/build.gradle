@@ -8,6 +8,8 @@ apply plugin: 'com.jakewharton.butterknife'
 
 apply plugin: 'com.google.gms.google-services'
 
+apply plugin: 'io.fabric'
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -23,7 +25,15 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        debug {
+            ext.enableCrashlytics = false
+        }
     }
+}
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
 }
 
 dependencies {
@@ -34,12 +44,17 @@ dependencies {
     implementation "com.android.support:design:$supportLibVersion"
     implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
 
+    //noinspection GradleDependency
     implementation "com.google.firebase:firebase-core:$firebaseVersion"
 
     implementation ("com.jakewharton:butterknife:$butterknifeVersion") {
         exclude group: "com.android.support"
     }
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+
+    implementation ("com.crashlytics.sdk.android:crashlytics:$crashlyticsVersion") {
+        transitive = true;
+    }
 
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "com.android.support.test:runner:$testRunnerVersion"
