@@ -35,10 +35,27 @@ public class DownloadService extends JobIntentService {
             switch (intent.getAction()) {
                 case ACTION_DOWNLOAD:
                     resultReceiver = intent.getParcelableExtra(RECEIVER);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("data", "HAHAHAHAHA");
-                    resultReceiver.send(DOWNLOAD_RESULT_CODE, bundle);
+                    Thread thread = new Thread() {
+                        @Override
+                        public void run() {
+                            super.run();
+                            try {
+                                sleep(3000);
+                            } catch (InterruptedException e) {
+                                sentRequest();
+                            } finally {
+                                sentRequest();
+                            }
+                        }
+                    };
+                    thread.start();
             }
         }
+    }
+
+    private void sentRequest() {
+        Bundle bundle = new Bundle();
+        bundle.putString("data", "");
+        resultReceiver.send(DOWNLOAD_RESULT_CODE, bundle);
     }
 }

@@ -11,7 +11,7 @@ import com.crashlytics.android.core.CrashlyticsCore;
 import io.fabric.sdk.android.Fabric;
 
 public class SplashScreen extends AppCompatActivity {
-    private final boolean DEBUG_MODE = true;
+    private final boolean DEBUG_MODE = false;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
