@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'com.jakewharton.butterknife'
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -29,6 +31,11 @@ dependencies {
     implementation "com.android.support:support-v4:$supportLibVersion"
     implementation "com.android.support:design:$supportLibVersion"
     implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+
+    implementation ("com.jakewharton:butterknife:$butterknifeVersion") {
+        exclude group: "com.android.support"
+    }
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
 
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "com.android.support.test:runner:$testRunnerVersion"

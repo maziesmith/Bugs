@@ -19,6 +19,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import id.ac.ui.cs.mobileprogramming.bugs.core.NetworkData;
 import id.ac.ui.cs.mobileprogramming.bugs.fragment.AboutFragment;
 import id.ac.ui.cs.mobileprogramming.bugs.fragment.LocationFragment;
@@ -26,7 +28,10 @@ import id.ac.ui.cs.mobileprogramming.bugs.fragment.MonitorFragment;
 
 public class MainScreen extends AppCompatActivity {
 
-    private DrawerLayout drawer;
+    @BindView(R2.id.drawer_layout) DrawerLayout drawer;
+    @BindView(R2.id.nav_view) NavigationView nav;
+    @BindView(R2.id.toolbar) Toolbar toolbar;
+
     private FragmentManager fragmentManager;
     List<Fragment> fragments;
     MonitorFragment monitor;
@@ -38,8 +43,17 @@ public class MainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        drawer = findViewById(R.id.drawer_layout);
-        NavigationView nav = findViewById(R.id.nav_view);
+        fragmentManager = getSupportFragmentManager();
+        fragments = new ArrayList<>();
+
+        ButterKnife.bind(this);
+
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_action_hamburger);
+        }
 
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -63,16 +77,6 @@ public class MainScreen extends AppCompatActivity {
             }
         });
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_action_hamburger);
-        }
-
-        fragmentManager = getSupportFragmentManager();
-        fragments = new ArrayList<>();
         setMonitorScreen();
     }
 
