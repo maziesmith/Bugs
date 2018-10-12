@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'com.jakewharton.butterknife'
 
+apply plugin: 'com.google.gms.google-services'
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -31,6 +33,8 @@ dependencies {
     implementation "com.android.support:support-v4:$supportLibVersion"
     implementation "com.android.support:design:$supportLibVersion"
     implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+
+    implementation "com.google.firebase:firebase-core:$firebaseVersion"
 
     implementation ("com.jakewharton:butterknife:$butterknifeVersion") {
         exclude group: "com.android.support"
